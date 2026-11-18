@@ -89,6 +89,42 @@ void main() {
       throwsUnimplementedError('setClosable'),
     );
     await expectLater(
+      () => YaruWindowPlatform.instance.setControlButtonsVisible(0, true),
+      throwsUnimplementedError('setControlButtonsVisible'),
+    );
+    await expectLater(
+      () => YaruWindowPlatform.instance.setResizable(0, true),
+      throwsUnimplementedError('setResizable'),
+    );
+    await expectLater(
+      () => YaruWindowPlatform.instance.setMinimumSize(0, Size.zero),
+      throwsUnimplementedError('setMinimumSize'),
+    );
+    await expectLater(
+      () => YaruWindowPlatform.instance.setMaximumSize(0, Size.zero),
+      throwsUnimplementedError('setMaximumSize'),
+    );
+    await expectLater(
+      () => YaruWindowPlatform.instance.setSize(0, Size.zero),
+      throwsUnimplementedError('setSize'),
+    );
+    await expectLater(
+      () => YaruWindowPlatform.instance.setPosition(0, Offset.zero),
+      throwsUnimplementedError('setPosition'),
+    );
+    await expectLater(
+      () => YaruWindowPlatform.instance.center(0),
+      throwsUnimplementedError('center'),
+    );
+    await expectLater(
+      () => YaruWindowPlatform.instance.setAlwaysOnTop(0, true),
+      throwsUnimplementedError('setAlwaysOnTop'),
+    );
+    await expectLater(
+      () => YaruWindowPlatform.instance.setSkipTaskbar(0, true),
+      throwsUnimplementedError('setSkipTaskbar'),
+    );
+    await expectLater(
       () => YaruWindowPlatform.instance.state(0),
       throwsUnimplementedError('state'),
     );
@@ -110,5 +146,5 @@ class MockYaruWindowPlatform
 class FakeYaruWindowPlatform extends YaruWindowPlatform {}
 
 Matcher throwsUnimplementedError(String method) => throwsA(
-      isA<UnimplementedError>().having((e) => e.message, 'method', method),
-    );
+  isA<UnimplementedError>().having((e) => e.message, 'method', method),
+);

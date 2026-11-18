@@ -89,6 +89,50 @@ abstract class YaruWindowPlatform extends PlatformInterface {
     throw UnimplementedError('setClosable');
   }
 
+  /// Sets whether the native window control buttons of the window with the
+  /// given [id] are visible.
+  Future<void> setControlButtonsVisible(int id, bool visible) {
+    throw UnimplementedError('setControlButtonsVisible');
+  }
+
+  /// Sets whether the window with the given [id] is resizable.
+  Future<void> setResizable(int id, bool resizable) {
+    throw UnimplementedError('setResizable');
+  }
+
+  /// Sets the minimum size of the window with the given [id].
+  Future<void> setMinimumSize(int id, Size size) {
+    throw UnimplementedError('setMinimumSize');
+  }
+
+  /// Sets the maximum size of the window with the given [id].
+  Future<void> setMaximumSize(int id, Size size) {
+    throw UnimplementedError('setMaximumSize');
+  }
+
+  /// Sets the size of the window with the given [id].
+  Future<void> setSize(int id, Size size) {
+    throw UnimplementedError('setSize');
+  }
+
+  /// Sets the position of the window with the given [id].
+  Future<void> setPosition(int id, Offset position) {
+    throw UnimplementedError('setPosition');
+  }
+
+  /// Centers the window with the given [id] on its screen.
+  Future<void> center(int id) => throw UnimplementedError('center');
+
+  /// Sets whether the window with the given [id] stays above other windows.
+  Future<void> setAlwaysOnTop(int id, bool alwaysOnTop) {
+    throw UnimplementedError('setAlwaysOnTop');
+  }
+
+  /// Sets whether the window with the given [id] is hidden from the taskbar.
+  Future<void> setSkipTaskbar(int id, bool skip) {
+    throw UnimplementedError('setSkipTaskbar');
+  }
+
   /// Returns the state of the window with the given [id].
   Future<YaruWindowState> state(int id) => throw UnimplementedError('state');
 

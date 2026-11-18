@@ -193,6 +193,96 @@ void main() {
     await instance.setClosable(123, true);
   });
 
+  test('setControlButtonsVisible', () async {
+    final instance = YaruWindowMethodChannel();
+    messenger.setMockMethodCallHandler(instance.channel, (call) async {
+      expect(call.method, 'setControlButtonsVisible');
+      expect(call.arguments, [123, false]);
+      return null;
+    });
+    await instance.setControlButtonsVisible(123, false);
+  });
+
+  test('setResizable', () async {
+    final instance = YaruWindowMethodChannel();
+    messenger.setMockMethodCallHandler(instance.channel, (call) async {
+      expect(call.method, 'setResizable');
+      expect(call.arguments, [123, false]);
+      return null;
+    });
+    await instance.setResizable(123, false);
+  });
+
+  test('setMinimumSize', () async {
+    final instance = YaruWindowMethodChannel();
+    messenger.setMockMethodCallHandler(instance.channel, (call) async {
+      expect(call.method, 'setMinimumSize');
+      expect(call.arguments, [123, 10.0, 20.0]);
+      return null;
+    });
+    await instance.setMinimumSize(123, const Size(10, 20));
+  });
+
+  test('setMaximumSize', () async {
+    final instance = YaruWindowMethodChannel();
+    messenger.setMockMethodCallHandler(instance.channel, (call) async {
+      expect(call.method, 'setMaximumSize');
+      expect(call.arguments, [123, 10.0, 20.0]);
+      return null;
+    });
+    await instance.setMaximumSize(123, const Size(10, 20));
+  });
+
+  test('setSize', () async {
+    final instance = YaruWindowMethodChannel();
+    messenger.setMockMethodCallHandler(instance.channel, (call) async {
+      expect(call.method, 'setSize');
+      expect(call.arguments, [123, 10.0, 20.0]);
+      return null;
+    });
+    await instance.setSize(123, const Size(10, 20));
+  });
+
+  test('setPosition', () async {
+    final instance = YaruWindowMethodChannel();
+    messenger.setMockMethodCallHandler(instance.channel, (call) async {
+      expect(call.method, 'setPosition');
+      expect(call.arguments, [123, 5.0, 6.0]);
+      return null;
+    });
+    await instance.setPosition(123, const Offset(5, 6));
+  });
+
+  test('center', () async {
+    final instance = YaruWindowMethodChannel();
+    messenger.setMockMethodCallHandler(instance.channel, (call) async {
+      expect(call.method, 'center');
+      expect(call.arguments, [123]);
+      return null;
+    });
+    await instance.center(123);
+  });
+
+  test('setAlwaysOnTop', () async {
+    final instance = YaruWindowMethodChannel();
+    messenger.setMockMethodCallHandler(instance.channel, (call) async {
+      expect(call.method, 'setAlwaysOnTop');
+      expect(call.arguments, [123, true]);
+      return null;
+    });
+    await instance.setAlwaysOnTop(123, true);
+  });
+
+  test('setSkipTaskbar', () async {
+    final instance = YaruWindowMethodChannel();
+    messenger.setMockMethodCallHandler(instance.channel, (call) async {
+      expect(call.method, 'setSkipTaskbar');
+      expect(call.arguments, [123, true]);
+      return null;
+    });
+    await instance.setSkipTaskbar(123, true);
+  });
+
   test('state', () async {
     final instance = YaruWindowMethodChannel();
 

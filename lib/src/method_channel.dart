@@ -60,6 +60,33 @@ class YaruWindowMethodChannel extends YaruWindowPlatform {
       _invokeMethod('setClosable', [id, closable]);
 
   @override
+  Future<void> setControlButtonsVisible(int id, bool visible) =>
+      _invokeMethod('setControlButtonsVisible', [id, visible]);
+  @override
+  Future<void> setResizable(int id, bool resizable) =>
+      _invokeMethod('setResizable', [id, resizable]);
+  @override
+  Future<void> setMinimumSize(int id, Size size) =>
+      _invokeMethod('setMinimumSize', [id, size.width, size.height]);
+  @override
+  Future<void> setMaximumSize(int id, Size size) =>
+      _invokeMethod('setMaximumSize', [id, size.width, size.height]);
+  @override
+  Future<void> setSize(int id, Size size) =>
+      _invokeMethod('setSize', [id, size.width, size.height]);
+  @override
+  Future<void> setPosition(int id, Offset position) =>
+      _invokeMethod('setPosition', [id, position.dx, position.dy]);
+  @override
+  Future<void> center(int id) => _invokeMethod('center', [id]);
+  @override
+  Future<void> setAlwaysOnTop(int id, bool alwaysOnTop) =>
+      _invokeMethod('setAlwaysOnTop', [id, alwaysOnTop]);
+  @override
+  Future<void> setSkipTaskbar(int id, bool skip) =>
+      _invokeMethod('setSkipTaskbar', [id, skip]);
+
+  @override
   Future<YaruWindowState> state(int id) =>
       _invokeMapMethod('state', [id]).then(YaruWindowState.fromJson);
   @override
